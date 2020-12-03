@@ -1,6 +1,6 @@
 . /lib/functions.sh
 
-uci set firewall.@rule[-1]=rule
+uci add firewall rule
 uci set firewall.@rule[-1].name='ssh'
 uci set firewall.@rule[-1].src='wan'
 uci set firewall.@rule[-1].target='ACCEPT'
