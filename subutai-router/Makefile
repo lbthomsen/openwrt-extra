@@ -16,7 +16,7 @@ define Package/subutai-router
   SECTION:=Subutai
   CATEGORY:=Subutai
   TITLE:=Subutai Router
-  DEPENDS:=+base-files
+  DEPENDS:=+base-files +firewall
 endef
 
 define Package/subutai-router/description
