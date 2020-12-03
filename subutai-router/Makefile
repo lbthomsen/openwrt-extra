@@ -27,10 +27,9 @@ define Build/Compile
         # NOOP
 endef
 
-#define Package/subutai-router/install
-#	$(INSTALL_DIR) $(1)/etc
-#	$(INSTALL_CONF) ./files/etc/banner $(1)/etc
-#endef
+define Package/subutai-router/install
+	$(CP) ./files/* $(1)/
+endef
 
 $(eval $(call BuildPackage,subutai-router))
 
