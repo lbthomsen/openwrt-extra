@@ -11,7 +11,7 @@ PKG_HASH:=3403bf8e993f3c9d772f768142117df47bdbbb8e9bbf85a29c0e166f577f9311
 
 DEPENDS:=+libtirpc
 
-PKG_BUILD_DEPENDS:=libtirpc
+PKG_BUILD_DEPENDS:=+libtirpc
  
 include $(INCLUDE_DIR)/package.mk
  
