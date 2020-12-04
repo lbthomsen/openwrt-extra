@@ -6,8 +6,12 @@ PKG_RELEASE:=1
  
 PKG_BUILD_DIR:=$(BUILD_DIR)/zfs-$(PKG_VERSION)
 PKG_SOURCE:=zfs-$(PKG_VERSION).tar.gz
-PKG_SOURCE_URL:=https://github.com/openzfs/zfs/releases/download/zfs-2.0.0/zfs-2.0.0.tar.gz
-PKG_HASH:=9b7dc52656f5cbec846a7ba3299f73bd
+PKG_SOURCE_URL:=https://github.com/openzfs/zfs/releases/download/zfs-2.0.0/
+PKG_HASH:=3403bf8e993f3c9d772f768142117df47bdbbb8e9bbf85a29c0e166f577f9311
+
+DEPENDS:=+libtirpc
+
+PKG_BUILD_DEPENDS:=libtirpc
  
 include $(INCLUDE_DIR)/package.mk
  
@@ -27,8 +31,8 @@ define Build/Configure
 endef
  
 define Package/zfs/install
-        $(INSTALL_DIR) $(1)/usr/sbin
-        $(INSTALL_BIN) $(PKG_BUILD_DIR)/brctl/brctl $(1)/usr/sbin/
+	$(INSTALL_DIR) $(1)/usr/sbin
+	$(INSTALL_BIN) $(PKG_BUILD_DIR)/brctl/brctl $(1)/usr/sbin/
 endef
  
 $(eval $(call BuildPackage,zfs))
