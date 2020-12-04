@@ -8,10 +8,6 @@ PKG_BUILD_DIR:=$(BUILD_DIR)/zfs-$(PKG_VERSION)
 PKG_SOURCE:=zfs-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=https://github.com/openzfs/zfs/releases/download/zfs-2.0.0/
 PKG_HASH:=3403bf8e993f3c9d772f768142117df47bdbbb8e9bbf85a29c0e166f577f9311
-
-DEPENDS:=+libtirpc
-
-PKG_BUILD_DEPENDS:=+libtirpc
  
 include $(INCLUDE_DIR)/package.mk
  
@@ -20,6 +16,8 @@ define Package/zfs
   CATEGORY:=Subutai
   TITLE:=ZFS
   URL:=http://zfsonlinux.org
+  DEPENDS:=+libtirpc
+  PKG_BUILD_DEPENDS:=libtirpc
 endef
  
 define Package/zfs/description
@@ -32,7 +30,6 @@ endef
  
 define Package/zfs/install
 	$(INSTALL_DIR) $(1)/usr/sbin
-	$(INSTALL_BIN) $(PKG_BUILD_DIR)/brctl/brctl $(1)/usr/sbin/
 endef
  
 $(eval $(call BuildPackage,zfs))
