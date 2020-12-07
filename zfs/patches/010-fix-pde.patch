@@ -1,0 +1,12 @@
+Index: zfs-0.8.5/include/spl/sys/proc.h
+===================================================================
+--- zfs-0.8.5.orig/include/spl/sys/proc.h
++++ zfs-0.8.5/include/spl/sys/proc.h
+@@ -27,6 +27,7 @@
+ 
+ #include <linux/proc_fs.h>
+ 
++#define HAVE_PDE_DATA
+ #ifndef HAVE_PDE_DATA
+ #define	PDE_DATA(x) (PDE(x)->data)
+ #endif

@@ -1,0 +1,322 @@
+Index: zfs-2.0.0/configure
+===================================================================
+--- zfs-2.0.0.orig/configure
++++ zfs-2.0.0/configure
+@@ -38179,82 +38179,82 @@ fi
+ 
+ 
+ 
+-	{ $as_echo "$as_me:${as_lineno-$LINENO}: checking whether PDE_DATA() is available" >&5
+-$as_echo_n "checking whether PDE_DATA() is available... " >&6; }
+-
+-	if  ! test -f build/pde_data/pde_data.ko; then :
+-
+-
+-
+-	as_fn_error $? "
+-	*** None of the expected \"PDE_DATA\" interfaces were detected.
+-	*** This may be because your kernel version is newer than what is
+-	*** supported, or you are using a patched custom kernel with
+-	*** incompatible modifications.
+-	***
+-	*** ZFS Version: $ZFS_META_ALIAS
+-	*** Compatible Kernels: $ZFS_META_KVER_MIN - $ZFS_META_KVER_MAX
+-	" "$LINENO" 5
+-
+-
+-
+-else
+-
+-		if test "x$enable_linux_builtin" != "xyes"; then :
+-
+-
+-	grep -q -E '[[:space:]]PDE_DATA[[:space:]]' \
+-		$LINUX_OBJ/$LINUX_SYMBOLS 2>/dev/null
+-	rc=$?
+-	if test $rc -ne 0; then
+-		export=0
+-		for file in ; do
+-			grep -q -E "EXPORT_SYMBOL.*(PDE_DATA)" \
+-				"$LINUX/$file" 2>/dev/null
+-			rc=$?
+-			if test $rc -eq 0; then
+-				export=1
+-				break;
+-			fi
+-		done
+-		if test $export -eq 0; then :
+-
+-
+-	as_fn_error $? "
+-	*** None of the expected \"PDE_DATA\" interfaces were detected.
+-	*** This may be because your kernel version is newer than what is
+-	*** supported, or you are using a patched custom kernel with
+-	*** incompatible modifications.
+-	***
+-	*** ZFS Version: $ZFS_META_ALIAS
+-	*** Compatible Kernels: $ZFS_META_KVER_MIN - $ZFS_META_KVER_MAX
+-	" "$LINENO" 5
+-
+-
+-		else :
+-
+-		{ $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+-$as_echo "yes" >&6; }
+-
+-		fi
+-	else :
+-
+-		{ $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+-$as_echo "yes" >&6; }
+-
+-	fi
+-
+-
+-else
+-
+-
+-		{ $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+-$as_echo "yes" >&6; }
+-
+-
+-fi
+-
+-fi
++#	{ $as_echo "$as_me:${as_lineno-$LINENO}: checking whether PDE_DATA() is available" >&5
++#$as_echo_n "checking whether PDE_DATA() is available... " >&6; }
++#
++#	if  ! test -f build/pde_data/pde_data.ko; then :
++#
++#
++#
++#	as_fn_error $? "
++#	*** None of the expected \"PDE_DATA\" interfaces were detected.
++#	*** This may be because your kernel version is newer than what is
++#	*** supported, or you are using a patched custom kernel with
++#	*** incompatible modifications.
++#	***
++#	*** ZFS Version: $ZFS_META_ALIAS
++#	*** Compatible Kernels: $ZFS_META_KVER_MIN - $ZFS_META_KVER_MAX
++#	" "$LINENO" 5
++#
++#
++#
++#else
++#
++#		if test "x$enable_linux_builtin" != "xyes"; then :
++#
++#
++#	grep -q -E '[[:space:]]PDE_DATA[[:space:]]' \
++#		$LINUX_OBJ/$LINUX_SYMBOLS 2>/dev/null
++#	rc=$?
++#	if test $rc -ne 0; then
++#		export=0
++#		for file in ; do
++#			grep -q -E "EXPORT_SYMBOL.*(PDE_DATA)" \
++#				"$LINUX/$file" 2>/dev/null
++#			rc=$?
++#			if test $rc -eq 0; then
++#				export=1
++#				break;
++#			fi
++#		done
++#		if test $export -eq 0; then :
++#
++#
++#	as_fn_error $? "
++#	*** None of the expected \"PDE_DATA\" interfaces were detected.
++#	*** This may be because your kernel version is newer than what is
++#	*** supported, or you are using a patched custom kernel with
++#	*** incompatible modifications.
++#	***
++#	*** ZFS Version: $ZFS_META_ALIAS
++#	*** Compatible Kernels: $ZFS_META_KVER_MIN - $ZFS_META_KVER_MAX
++#	" "$LINENO" 5
++#
++#
++#		else :
++#
++#		{ $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
++#$as_echo "yes" >&6; }
++#
++#		fi
++#	else :
++#
++#		{ $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
++#$as_echo "yes" >&6; }
++#
++#	fi
++#
++#
++#else
++#
++#
++#		{ $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
++#$as_echo "yes" >&6; }
++#
++#
++#fi
++#
++#fi
+ 
+ 
+ 
+@@ -75087,82 +75087,82 @@ fi
+ 
+ 
+ 
+-	{ $as_echo "$as_me:${as_lineno-$LINENO}: checking whether PDE_DATA() is available" >&5
+-$as_echo_n "checking whether PDE_DATA() is available... " >&6; }
+-
+-	if  ! test -f build/pde_data/pde_data.ko; then :
+-
+-
+-
+-	as_fn_error $? "
+-	*** None of the expected \"PDE_DATA\" interfaces were detected.
+-	*** This may be because your kernel version is newer than what is
+-	*** supported, or you are using a patched custom kernel with
+-	*** incompatible modifications.
+-	***
+-	*** ZFS Version: $ZFS_META_ALIAS
+-	*** Compatible Kernels: $ZFS_META_KVER_MIN - $ZFS_META_KVER_MAX
+-	" "$LINENO" 5
+-
+-
+-
+-else
+-
+-		if test "x$enable_linux_builtin" != "xyes"; then :
+-
+-
+-	grep -q -E '[[:space:]]PDE_DATA[[:space:]]' \
+-		$LINUX_OBJ/$LINUX_SYMBOLS 2>/dev/null
+-	rc=$?
+-	if test $rc -ne 0; then
+-		export=0
+-		for file in ; do
+-			grep -q -E "EXPORT_SYMBOL.*(PDE_DATA)" \
+-				"$LINUX/$file" 2>/dev/null
+-			rc=$?
+-			if test $rc -eq 0; then
+-				export=1
+-				break;
+-			fi
+-		done
+-		if test $export -eq 0; then :
+-
+-
+-	as_fn_error $? "
+-	*** None of the expected \"PDE_DATA\" interfaces were detected.
+-	*** This may be because your kernel version is newer than what is
+-	*** supported, or you are using a patched custom kernel with
+-	*** incompatible modifications.
+-	***
+-	*** ZFS Version: $ZFS_META_ALIAS
+-	*** Compatible Kernels: $ZFS_META_KVER_MIN - $ZFS_META_KVER_MAX
+-	" "$LINENO" 5
+-
+-
+-		else :
+-
+-		{ $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+-$as_echo "yes" >&6; }
+-
+-		fi
+-	else :
+-
+-		{ $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+-$as_echo "yes" >&6; }
+-
+-	fi
+-
+-
+-else
+-
+-
+-		{ $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+-$as_echo "yes" >&6; }
+-
+-
+-fi
+-
+-fi
++#	{ $as_echo "$as_me:${as_lineno-$LINENO}: checking whether PDE_DATA() is available" >&5
++#$as_echo_n "checking whether PDE_DATA() is available... " >&6; }
++#
++#	if  ! test -f build/pde_data/pde_data.ko; then :
++#
++#
++#
++#	as_fn_error $? "
++#	*** None of the expected \"PDE_DATA\" interfaces were detected.
++#	*** This may be because your kernel version is newer than what is
++#	*** supported, or you are using a patched custom kernel with
++#	*** incompatible modifications.
++#	***
++#	*** ZFS Version: $ZFS_META_ALIAS
++#	*** Compatible Kernels: $ZFS_META_KVER_MIN - $ZFS_META_KVER_MAX
++#	" "$LINENO" 5
++#
++#
++#
++#else
++#
++#		if test "x$enable_linux_builtin" != "xyes"; then :
++#
++#
++#	grep -q -E '[[:space:]]PDE_DATA[[:space:]]' \
++#		$LINUX_OBJ/$LINUX_SYMBOLS 2>/dev/null
++#	rc=$?
++#	if test $rc -ne 0; then
++#		export=0
++#		for file in ; do
++#			grep -q -E "EXPORT_SYMBOL.*(PDE_DATA)" \
++#				"$LINUX/$file" 2>/dev/null
++#			rc=$?
++#			if test $rc -eq 0; then
++#				export=1
++#				break;
++#			fi
++#		done
++#		if test $export -eq 0; then :
++#
++#
++#	as_fn_error $? "
++#	*** None of the expected \"PDE_DATA\" interfaces were detected.
++#	*** This may be because your kernel version is newer than what is
++#	*** supported, or you are using a patched custom kernel with
++#	*** incompatible modifications.
++#	***
++#	*** ZFS Version: $ZFS_META_ALIAS
++#	*** Compatible Kernels: $ZFS_META_KVER_MIN - $ZFS_META_KVER_MAX
++#	" "$LINENO" 5
++#
++#
++#		else :
++#
++#		{ $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
++#$as_echo "yes" >&6; }
++#
++#		fi
++#	else :
++#
++#		{ $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
++#$as_echo "yes" >&6; }
++#
++#	fi
++#
++#
++#else
++#
++#
++#		{ $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
++#$as_echo "yes" >&6; }
++#
++#
++#fi
++#
++#fi
+ 
+ 
+ 
