@@ -22,8 +22,8 @@ define Package/zfs
   CATEGORY:=Subutai
   TITLE:=ZFS
   URL:=http://zfsonlinux.org
-  DEPENDS:=+libtirpc +libuuid +uuid
-  PKG_BUILD_DEPENDS:=libtirpc uuid
+  DEPENDS:=+libtirpc +libuuid +uuid +libblkid +libopenssl +zlib
+  PKG_BUILD_DEPENDS:=libtirpc uuid libopenssl
   TARGET_CFLAGS += -DHAVE_PDE_DATA
 endef
  
@@ -37,6 +37,7 @@ endef
  
 define Package/zfs/install
 	$(INSTALL_DIR) $(1)/sbin
+	$(INSTALL_DIR) $(1)/lib
 	$(INSTALL_DIR) $(1)/lib/modules/$(LINUX_VERSION)
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/module/icp/icp.ko $(1)/lib/modules/$(LINUX_VERSION)
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/module/spl/spl.ko $(1)/lib/modules/$(LINUX_VERSION)
@@ -46,8 +47,13 @@ define Package/zfs/install
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/module/unicode/zunicode.ko $(1)/lib/modules/$(LINUX_VERSION)
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/module/zcommon/zcommon.ko $(1)/lib/modules/$(LINUX_VERSION)
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/module/zfs/zfs.ko $(1)/lib/modules/$(LINUX_VERSION)
-	$(INSTALL_BIN) $(PKG_BUILD_DIR)/cmd/zpool/zpool $(1)/sbin
-	$(INSTALL_BIN) $(PKG_BUILD_DIR)/cmd/zfs/zfs $(1)/sbin
+	$(CP) $(PKG_BUILD_DIR)/lib/libzpool/.libs/* $(1)/lib
+	$(CP) $(PKG_BUILD_DIR)/lib/libuutil/.libs/* $(1)/lib
+	$(CP) $(PKG_BUILD_DIR)/lib/libzfs/.libs/* $(1)/lib
+	$(CP) $(PKG_BUILD_DIR)/lib/libzfs_core/.libs/* $(1)/lib
+	$(CP) $(PKG_BUILD_DIR)/lib/libnvpair/.libs/* $(1)/lib
+	$(INSTALL_BIN) $(PKG_BUILD_DIR)/cmd/zpool/.libs/zpool $(1)/sbin
+	$(INSTALL_BIN) $(PKG_BUILD_DIR)/cmd/zfs/.libs/zfs $(1)/sbin
 endef
  
 $(eval $(call BuildPackage,zfs))
