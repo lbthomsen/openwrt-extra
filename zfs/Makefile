@@ -55,7 +55,7 @@ define Package/zfs/install
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/cmd/zhack/.libs/zhack $(1)/sbin
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/cmd/zstreamdump/.libs/zstreamdump $(1)/sbin
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/cmd/ztest/.libs/ztest $(1)/sbin
-	$(INSTALL_BIN) $(PKG_BUILD_DIR)/cmd/zvol_id/.libs/zvol_id $(1)/sbin
+	$(INSTALL_BIN) $(PKG_BUILD_DIR)/cmd/zvol_id/zvol_id $(1)/sbin
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/cmd/zgenhostid/zgenhostid $(1)/sbin
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/cmd/zvol_wait/zvol_wait $(1)/sbin
 endef
