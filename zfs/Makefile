@@ -9,7 +9,7 @@ PKG_RELEASE:=1
 PKG_BUILD_DIR:=$(BUILD_DIR)/zfs-$(PKG_VERSION)
 PKG_SOURCE:=zfs-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=https://github.com/openzfs/zfs/releases/download/${PKG_NAME}-${PKG_VERSION}/
-PKG_HASH:=dbb41d6b9c606a34ac93f4c19069fd6806ceeacb558f834f8a70755dadb7cd3d
+PKG_HASH:=88db913dc07febebce5117eee1f2a83462a32266ec07acede5d6a07e9bd6a677
  
 include $(INCLUDE_DIR)/package.mk
  
