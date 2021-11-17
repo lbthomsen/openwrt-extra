@@ -2,6 +2,9 @@
 
 . /lib/functions.sh
 
+if ! uci show firewall | grep name | grep ssh >/dev/null
+then 
+
 uci add firewall rule
 uci set firewall.@rule[-1].name='ssh'
 uci set firewall.@rule[-1].src='wan'
@@ -11,5 +14,7 @@ uci set firewall.@rule[-1].dest_port='22'
 uci commit 
 
 /etc/init.d/firewall restart
+
+fi
 
 exit 0
