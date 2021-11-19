@@ -13,8 +13,8 @@ PKG_BUILD_DIR:=$(BUILD_DIR)/luci-theme-lifeline-$(PKG_VERSION)
 include $(INCLUDE_DIR)/package.mk
 
 define Package/luci-theme-lifeline
-  SECTION:=Luci
-  CATEGORY:=Themes
+  CATEGORY:=LuCI
+  SECTION:=Themes
   TITLE:=LifeLine Connect Theme
 endef
 
