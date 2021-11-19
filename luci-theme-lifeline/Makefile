@@ -14,7 +14,7 @@ include $(INCLUDE_DIR)/package.mk
 
 define Package/luci-theme-lifeline
   CATEGORY:=LuCI
-  SECTION:=Themes
+  SUBMENU:=4. Themes
   TITLE:=LifeLine Connect Theme
 endef
 
