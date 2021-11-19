@@ -1,0 +1,13 @@
+#!/bin/sh
+
+. /lib/functions.sh
+
+if ! uci show luci.theme.LifeLine | grep LifeLine >/dev/null
+then 
+
+uci set luci.theme.LifeLine=rule
+uci commit 
+
+fi
+
+exit 0
