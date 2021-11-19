@@ -5,7 +5,7 @@
 if ! uci show luci.theme.LifeLine | grep LifeLine >/dev/null
 then 
 
-uci set luci.theme.LifeLine=rule
+uci set luci.theme.LifeLine='/luci-static/lifeline'
 uci commit 
 
 fi
