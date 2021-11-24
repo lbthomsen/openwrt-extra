@@ -1,0 +1,15 @@
+#!/bin/ash
+
+. /lib/functions.sh
+
+HOSTNAME=`uci get system.@system[0].hostname`
+
+if [ "${HOSTNAME}" = "OpenWrt" ]
+then 
+        uci set system.@system[0].hostname=llc0
+        uci commit 
+        /etc/init.d/system reload
+fi
+
+exit 0 
+
