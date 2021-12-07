@@ -1,5 +1,11 @@
 
+TAG="unknown"
+
+log_init() {
+	TAG=$1
+}
+
 log() {
-	logger -t lifeline -p daemon.$1 $2
+	logger -t $TAG -p daemon.$1 $2
 }
 
