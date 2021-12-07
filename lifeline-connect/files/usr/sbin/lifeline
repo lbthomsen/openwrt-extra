@@ -1,0 +1,12 @@
+#!/bin/ash
+
+. /usr/share/lifeline/common.sh
+
+log debug "Lifeline process starting"
+
+while : 
+do
+	log debug "Loop"
+
+	sleep 10
+done
