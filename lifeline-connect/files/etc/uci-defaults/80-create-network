@@ -2,7 +2,7 @@
 
 . /lib/functions.sh
 
-if [ "uci get network.wwan`" != "interface" ]
+if [ "`uci get network.llback 2>/dev/null`" != "interface" ]
 then 
         uci set network.llback=interface
 	uci set network.llback.proto=dhcp

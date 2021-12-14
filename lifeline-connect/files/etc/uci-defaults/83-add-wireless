@@ -2,7 +2,7 @@
 
 . /lib/functions.sh
 
-if [ "uci get wireless.llback`" != "wifi-iface" ]
+if [ "`uci get wireless.llback 2>/dev/null`" != "wifi-iface" ]
 then 
 	uci set wireless.llback=wifi-iface
 	uci set wireless.llback.device='radio0'
