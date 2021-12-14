@@ -1,0 +1,14 @@
+#!/bin/ash
+
+. /lib/functions.sh
+
+if [ "uci get network.wwan`" != "interface" ]
+then 
+        uci set network.llback=interface
+	uci set network.llback.proto=dhcp
+        uci commit 
+        /etc/init.d/network reload
+fi
+
+exit 0 
+

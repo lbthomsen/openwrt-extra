@@ -1,0 +1,13 @@
+#!/bin/ash
+
+. /lib/functions.sh
+
+if [ "`uci get firewall.@zone[2].name`" = "wan" ]
+then
+	uci add_list firewall.@zone[2].network=llback
+        uci commit 
+        /etc/init.d/firewall reload
+fi
+
+exit 0 
+
