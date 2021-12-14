@@ -7,7 +7,7 @@ then
 	uci set wireless.llback=wifi-iface
 	uci set wireless.llback.device='radio0'
 	uci set wireless.llback.mode='sta'
-	uci set wireless.llback.ssid='llcon'
+	uci set wireless.llback.ssid='llback'
 	uci set wireless.llback.encryption='psk2'
 	uci set wireless.llback.key='SuperSecret'
 	uci set wireless.llback.network='llback'

@@ -9,7 +9,7 @@ log debug "online ${INTERFACE} ${DEVICE} ${GLOBAL}"
 if [ "${INTERFACE}" = "wan" ]
 then
         log debug "switching backup off"
-        uci set wireless.wifinet1.disabled=1
+        uci set wireless.llback.disabled=1
         /etc/init.d/network reload
 fi
 
