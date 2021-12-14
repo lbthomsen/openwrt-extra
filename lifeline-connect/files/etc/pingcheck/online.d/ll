@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# Called when wan goes online
+
 . /usr/share/lifeline/common.sh
 
 log_init lifeline
@@ -11,5 +13,12 @@ then
         log debug "switching backup off"
         uci set wireless.llback.disabled=1
         /etc/init.d/network reload
+
+        # Let's force a renew
+        if [ -f /var/run/udhcpc-wan.pid ]
+        then
+                kill -s USR1 `cat /var/run/udhcpc-wan.pid`
+        fi
+
 fi
 
