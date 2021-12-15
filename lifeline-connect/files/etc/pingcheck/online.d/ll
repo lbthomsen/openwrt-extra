@@ -12,6 +12,7 @@ if [ "${INTERFACE}" = "wan" ]
 then
         log debug "switching backup off"
         uci set wireless.llback.disabled=1
+	uci commit
         /etc/init.d/network reload
 
         # Let's force a renew

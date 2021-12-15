@@ -1,4 +1,6 @@
 #!/bin/sh
+# 
+# Called when wan goes offline
 
 . /usr/share/lifeline/common.sh
 
@@ -10,6 +12,7 @@ if [ "${INTERFACE}" = "wan" ]
 then
         log debug "switching backup on"
         uci set wireless.llback.disabled=0
+	uci commit
         /etc/init.d/network reload
 fi
 
