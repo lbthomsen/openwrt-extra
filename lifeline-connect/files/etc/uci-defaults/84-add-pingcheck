@@ -2,7 +2,7 @@
 
 . /lib/functions.sh
 
-if ! uci show pingcheck | egreb "^pingcheck.\@\.name" | egreb llback >/dev/null
+if ! uci show pingcheck | grep "name=" | grep llback >/dev/null
 then
         uci add pingcheck interface
         uci set pingcheck.@interface[-1].name=llback
