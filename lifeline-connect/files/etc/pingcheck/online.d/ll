@@ -10,9 +10,16 @@ log debug "online ${INTERFACE} ${DEVICE} ${GLOBAL}"
 
 if [ "${INTERFACE}" = "wan" ]
 then
+        log debug "determining url"
+        IP=`ip route show | grep default | grep wlan0 | awk '{print $3}'`
+        PORT=10101
+        URL=http://${IP}:${PORT}/ap/off
+        log debug "calling ${URL}"
+        curl -q -X POST ${URL}
+
         log debug "switching backup off"
         uci set wireless.llback.disabled=1
-	uci commit
+        uci commit
         /etc/init.d/network reload
 
         # Let's force a renew

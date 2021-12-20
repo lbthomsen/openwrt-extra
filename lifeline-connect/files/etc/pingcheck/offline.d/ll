@@ -8,11 +8,19 @@ log_init lifeline
 
 log debug "offline ${INTERFACE} ${DEVICE} ${GLOBAL}"
 
+
 if [ "${INTERFACE}" = "wan" ]
 then
+        log debug "looking for lifeline device"
+        MDNS_RESULT=`avahi-browse -t -p -r _llap._tcp | grep IPv4 | grep br-lan | grep "^="`
+        IP=`echo $MDNS_RESULT | awk -F ";" '{print $8}'`
+        PORT=`echo $MDNS_RESULT | awk -F ";" '{print $9}'`
+        URL=http://${IP}:${PORT}/ap/on
+        log debug "connecting to $URL"
+        curl -q -X POST $URL
         log debug "switching backup on"
         uci set wireless.llback.disabled=0
-	uci commit
+        uci commit
         /etc/init.d/network reload
 fi
 
