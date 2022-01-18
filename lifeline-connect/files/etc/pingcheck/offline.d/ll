@@ -22,5 +22,8 @@ then
         uci set wireless.llback.disabled=0
         uci commit
         /etc/init.d/network reload
+
+	iptables -I POSTROUTING -t mangle -o wlan0 -j TTL --ttl-set 66
+
 fi
 
