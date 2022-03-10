@@ -42,8 +42,8 @@
 			</script>
 		<% end %>
 		<meta name="viewport" content="initial-scale=1.0">
-		<link rel="stylesheet" href="<%=media%>/cascade.css?v=git-21.321.23142-6689811">
-		<link rel="stylesheet" media="only screen and (max-device-width: 854px)" href="<%=media%>/mobile.css?v=git-21.321.23142-6689811" type="text/css" />
+		<link rel="stylesheet" href="<%=media%>/cascade.css?v=git-22.055.81918-06b3517">
+		<link rel="stylesheet" media="only screen and (max-device-width: 854px)" href="<%=media%>/mobile.css?v=git-22.055.81918-06b3517" type="text/css" />
 		<link rel="shortcut icon" href="<%=media%>/favicon.png">
 		<% if node and node.css then %>
 			<link rel="stylesheet" href="<%=resource%>/<%=node.css%>">
@@ -51,8 +51,8 @@
 		<% if css then %>
 			<style title="text/css"><%= css %></style>
 		<% end -%>
-		<script src="<%=url('admin/translations', luci.i18n.context.lang)%>?v=git-21.321.23142-6689811"></script>
-		<script src="<%=resource%>/cbi.js?v=git-21.321.23142-6689811"></script>
+		<script src="<%=url('admin/translations', luci.i18n.context.lang)%>?v=git-22.055.81918-06b3517"></script>
+		<script src="<%=resource%>/cbi.js?v=git-22.055.81918-06b3517"></script>
 	</head>
 
 	<body class="lang_<%=luci.i18n.context.lang%> <% if node then %><%= striptags( node.title ) %><%- end %>" data-page="<%= pcdata(table.concat(disp.context.requestpath, "-")) %>">
